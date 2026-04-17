@@ -19,3 +19,4 @@ T6: The architecture of the code must implement the Observer pattern.
 T7: The Singleton pattern is used for database access.
 
 T8: The system keeps and reports statistics on number of current volunteers in all currently available tasks.
+
