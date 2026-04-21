@@ -1,18 +1,15 @@
 {
-  "name": "ckMongoTest",
+  "name": "cmps4150-helpers-system",
   "version": "1.0.0",
-  "description": "CKs Express Mongo Test on Render",
-  "main": "testmongo.js",
-  "repository": "https://github.com/ckorpio/MongoTest",
-  "author": "CK",
-  "license": "MIT",
-  "private": false,
+  "description": "CMPS4150 Project 2 helpers system using Express and MongoDB",
+  "main": "src/app.js",
   "scripts": {
-    "start": "node testmongo.js"
+    "start": "node src/app.js"
   },
   "dependencies": {
     "dotenv": "^17.3.1",
     "express": "^4.18.2",
+    "express-session": "^1.18.1",
     "mongodb": "^5.9.2"
   },
   "engines": {
