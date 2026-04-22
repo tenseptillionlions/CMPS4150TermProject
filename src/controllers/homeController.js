@@ -1,4 +1,5 @@
 const TaskModel = require("../models/taskModel");
+const StatisticsModel = require("../models/statisticsModel");
 const { renderHomePage } = require("../views/homeView");
 
 async function index(req, res) {
@@ -8,6 +9,7 @@ async function index(req, res) {
       renderHomePage({
         user: req.session ? req.session.user : null,
         tasks,
+        totalVolunteerCount: await StatisticsModel.getTotalVolunteerCount(),
         message: req.query.msg,
         error: req.query.error
       })

@@ -15,7 +15,7 @@ function renderTask(task) {
   </article>`;
 }
 
-function renderHomePage({ user, tasks, message, error }) {
+function renderHomePage({ user, tasks, message, error, totalVolunteerCount }) {
   const tasksHtml =
     tasks.length === 0
       ? "<p>No active tasks available right now.</p>"
@@ -23,7 +23,7 @@ function renderHomePage({ user, tasks, message, error }) {
 
   const body = `
     <h1>Helpers Task Board</h1>
-    <p>Anyone can volunteer by entering a unique identifier. Task creation/ownership requires login.</p>
+    <p>Anyone can join our ${totalVolunteerCount} volunteers by entering a unique identifier. Task creation/ownership requires login.</p>
     <p><a href="/login">Login as task owner</a> | <a href="/subscriptions">Find my subscriptions</a></p>
     <section>
       <h2>Active Tasks</h2>

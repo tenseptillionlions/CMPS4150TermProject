@@ -61,6 +61,15 @@ class StatisticsModel {
       .sort({ volunteerCount: -1, title: 1 })
       .toArray();
   }
+
+  static async getTotalVolunteerCount() {
+  const stats = await StatisticsModel.collection();
+  const result = await stats.aggregate([
+    { $match: { active: true } },
+    { $group: { _id: null, total: { $sum: "$volunteerCount" } } }
+  ]).toArray();
+  return result[0]?.total || 0;
+}
 }
 
 module.exports = StatisticsModel;
