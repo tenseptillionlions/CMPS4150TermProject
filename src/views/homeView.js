@@ -21,10 +21,16 @@ function renderHomePage({ user, tasks, message, error, totalVolunteerCount }) {
       ? "<p>No active tasks available right now.</p>"
       : tasks.map(renderTask).join("\n");
 
+  const authActionHtml = user
+    ? `<form method="post" action="/logout" style="display:inline;">
+         <button type="submit">Sign out</button>
+       </form>`
+    : `<a href="/login">Login as task owner</a>`;
+
   const body = `
     <h1>Helpers Task Board</h1>
     <p>Anyone can join our ${totalVolunteerCount} volunteers by entering a unique identifier. Task creation/ownership requires login.</p>
-    <p><a href="/login">Login as task owner</a> | <a href="/subscriptions">Find my subscriptions</a></p>
+    <p>${authActionHtml} | <a href="/subscriptions">Find my subscriptions</a></p>
     <section>
       <h2>Active Tasks</h2>
       ${tasksHtml}

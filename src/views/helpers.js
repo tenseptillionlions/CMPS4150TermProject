@@ -12,7 +12,7 @@ function renderLayout({ title, user, message, error, body }) {
     ? `<span>Logged in as <strong>${escapeHtml(user.username)}</strong></span>
        <a href="/owner/tasks">Owner Dashboard</a>
        <form method="post" action="/logout" style="display:inline;">
-         <button type="submit">Logout</button>
+         <button type="submit">Sign out</button>
        </form>`
     : `<a href="/login">Owner Login</a>`;
 
